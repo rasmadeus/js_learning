@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>
+			Day4
+		</title>
+		<script>
+			window.onload = function () {
+				for(var i=0; i< 10; ++i);
+				var local = document.getElementById('local');
+				local.innerHTML = i;
+
+				for(j=0; j<10; ++j);
+				var global = document.getElementById('global');
+				global.innerHTML = j;
+			}
+		</script>
+	</head>
+	<body>
+		<span id="local"></span><br/>
+		<span id="global"></span>		
+	</body>
+</html>
