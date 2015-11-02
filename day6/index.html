@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Day 6</title>
+		<script>
+			function Animal(name) {
+				this.speed = 0;
+				this.name = name;
+				this.run = function(speed) {
+					this.speed += speed;
+					document.getElementById('var0').innerHTML = this.speed;
+				}
+			};
+			
+			function Car(name) {
+				this.name = name;
+			};
+
+			Car.prototype.power = function(speed) {
+				document.getElementById('var1').innerHTML = this.name + ' ' + speed;
+			}
+
+			function Hamster(spanId) {
+				this.food = [];
+				this.spanId = spanId;
+			};
+			
+			Hamster.prototype.found = function(food) {
+				this.food.push(food);
+			}
+			Hamster.prototype.show = function() {
+				document.getElementById(this.spanId).innerHTML = this.food.join(', ');
+			}
+
+			window.onload = function () {
+				var animal = new Animal('cat');
+				animal.run(5);
+
+				var car = new Car('vaz');
+				car.power(10);
+
+				var hamster0 = new Hamster('var2');
+				hamster0.found('Thind1');
+				hamster0.found('Thing2');
+				hamster0.show();
+
+				var hamster1 = new Hamster('var3');
+				hamster1.found('Meat');
+				hamster1.show();
+			}
+		</script>
+	</head>
+	<body>
+		<span id='var0'></span>
+		<span id='var1'></span>
+		<span id='var2'></span>
+		<span id='var3'></span>
+	</body>
+</html>
